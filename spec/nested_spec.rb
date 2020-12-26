@@ -1,41 +1,59 @@
-require_relative "spec_helper"
-require_relative "../nested.rb"
+:languages => ["C"]
+ }
+}
 
-describe "Working with Nested Hashes -" do
-  describe "the hopper method" do
-    it "operates on the programmer_hash and returns the value of the :grace_hopper key" do
-      expect(hopper).to eq({:known_for => "COBOL", :languages => ["COBOL", "FORTRAN"]})
+programmer_hash[:grace_hopper]
+end
 
-    end
-  end
+def alan_kay_is_known_for
+@@ -36,7 +36,7 @@ def alan_kay_is_known_for
+   :languages => ["C"]
+ }
+}
 
-  describe "the alan_kay_is_known_for method" do
-    it "operates on the programmer_hash and returns the value of what Alan Kay is known for" do
-      expect(alan_kay_is_known_for).to eq("Object Orientation")
-    end
-  end
+programmer_hash[:alan_kay][:known_for]
+end
 
-  describe "the dennis_ritchies_language method" do
-    it "operates on the programmer_hash and returns the value of Dennis Ritchie's language as a string" do
-      expect(dennis_ritchies_language).to eq("C")
-    end
-  end
+def dennis_ritchies_language
+@@ -55,7 +55,7 @@ def dennis_ritchies_language
+   :languages => ["C"]
+ }
+}
 
-  describe "the adding_matz method" do 
-    it "operates on the programmer_hash and adds a key/value pair to the top level of the hash, returning the newly-added-to hash" do
-      expect(adding_matz.keys).to include(:yukihiro_matsumoto)
-    end
-  end
+programmer_hash[:dennis_ritchie][:languages][0]
+end
 
-  describe "the changing_alan method" do
-    it "operates on the programmer_hash and changes what Alan Kay is known for, returning the newly-changed hash" do
-      expect(changing_alan[:alan_kay][:known_for]).to eq("GUI")
-    end
-  end
+def adding_matz
+@@ -81,7 +81,12 @@ def adding_matz
+   :languages => ["C"]
+ }
+}
 
-  describe "the adding_to_dennis method" do
-    it "operates on the programmer_hash and adds 'Assembly' to Dennis Ritchie's languages, returning the newly-added-to-hash" do
-      expect(adding_to_dennis[:dennis_ritchie][:languages][1]).to include("Assembly")
-    end
-  end
+programmer_hash[:yukihiro_matsumoto] = {
+:known_for => "Ruby",
+:languages => ["LISP", "C"]
+}
+
+programmer_hash
+end
+
+def changing_alan
+@@ -103,6 +108,9 @@ def changing_alan
+   :languages => ["C"]
+ }
+}
+
+programmer_hash[:alan_kay][:known_for] = "GUI"
+programmer_hash
+
+end
+
+@@ -125,5 +133,8 @@ def adding_to_dennis
+   :languages => ["C"]
+ }
+}
+
+programmer_hash[:dennis_ritchie][:languages] << "Assembly"
+programmer_hash
+
 end
