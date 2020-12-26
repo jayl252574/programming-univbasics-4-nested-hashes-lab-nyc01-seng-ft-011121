@@ -1,59 +1,103 @@
-:languages => ["C"]
- }
-}
+def hopper
+	programmer_hash = 
+	programmer_hash =
+ 		{
+      :grace_hopper => {
+        :known_for => "COBOL",
+@@ -15,13 +15,13 @@ def hopper
+        :languages => ["C"]
+      }
+    }
 
-programmer_hash[:grace_hopper]
+		programmer_hash[:grace_hopper]
 end
 
 def alan_kay_is_known_for
-@@ -36,7 +36,7 @@ def alan_kay_is_known_for
-   :languages => ["C"]
- }
-}
+	# What combination of keys would you use to return the value of the :known_for key of :alan_kay?
+	
+	programmer_hash = 
 
-programmer_hash[:alan_kay][:known_for]
+	programmer_hash =
+ 		{
+      :grace_hopper => {
+        :known_for => "COBOL",
+@@ -36,11 +36,11 @@ def alan_kay_is_known_for
+        :languages => ["C"]
+      }
+    }
+
+		programmer_hash[:alan_kay][:known_for]
 end
 
 def dennis_ritchies_language
+	programmer_hash = 
+	programmer_hash =
+ 		{
+      :grace_hopper => {
+        :known_for => "COBOL",
 @@ -55,7 +55,7 @@ def dennis_ritchies_language
-   :languages => ["C"]
- }
-}
+        :languages => ["C"]
+      }
+    }
 
-programmer_hash[:dennis_ritchie][:languages][0]
+	 programmer_hash[:dennis_ritchie][:languages][0]
 end
 
 def adding_matz
-@@ -81,7 +81,12 @@ def adding_matz
-   :languages => ["C"]
- }
-}
+@@ -66,7 +66,7 @@ def adding_matz
+# }
+# return the entire updated hash
 
-programmer_hash[:yukihiro_matsumoto] = {
-:known_for => "Ruby",
-:languages => ["LISP", "C"]
-}
+	programmer_hash = 
+	programmer_hash =
+ 		{
+      :grace_hopper => {
+        :known_for => "COBOL",
+@@ -81,14 +81,19 @@ def adding_matz
+        :languages => ["C"]
+      }
+    }
+		programmer_hash[:yukihiro_matsumoto] = {
+			:known_for => "Ruby",
+			:languages => ["LISP", "C"]
+		}
 
-programmer_hash
+		programmer_hash
 end
 
 def changing_alan
-@@ -103,6 +108,9 @@ def changing_alan
-   :languages => ["C"]
- }
-}
+  # change what Alan Kay is :known_for to the value of the alans_new_info variable. 
+  # change what Alan Kay is :known_for to the value of the alans_new_info variable.
+  # return the entire updated hash
 
-programmer_hash[:alan_kay][:known_for] = "GUI"
-programmer_hash
+	programmer_hash = 
+	programmer_hash =
+ 		{
+      :grace_hopper => {
+        :known_for => "COBOL",
+@@ -103,14 +108,15 @@ def changing_alan
+        :languages => ["C"]
+      }
+    }
 
+		programmer_hash[:alan_kay][:known_for] = "GUI"
+		programmer_hash
 end
 
-@@ -125,5 +133,8 @@ def adding_to_dennis
-   :languages => ["C"]
- }
-}
+def adding_to_dennis
+  # add "Assembly" to Dennis Ritchie's languages array
+  # return the entire updated hash
 
-programmer_hash[:dennis_ritchie][:languages] << "Assembly"
-programmer_hash
+	programmer_hash = 
+	programmer_hash =
+ 		{
+      :grace_hopper => {
+        :known_for => "COBOL",
+@@ -125,5 +131,7 @@ def adding_to_dennis
+        :languages => ["C"]
+      }
+    }
+		programmer_hash[:dennis_ritchie][:languages][1]= "Assembly"
 
+		programmer_hash
 end
